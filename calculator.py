@@ -8,4 +8,5 @@ class Shape(ABC):
         pass
 
     def __str__(self):
-        return f"Shape: {self.__class__.__name__}"
+        return f"The area of the shape {self.__class__.__name__} is: {self.get_area()}"
+
