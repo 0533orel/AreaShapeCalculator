@@ -1,6 +1,7 @@
 from shapes.rectangle import Rectangle
 from shapes.square import Square
 from shapes.triangle import Triangle
+from shapes.rightTriangle import RightTriangle
 from shapes.circle import Circle
 from shapes.hexagon import Hexagon
 
@@ -26,10 +27,40 @@ def menu():
                 side = float(input("Enter side length: "))
                 shape = Square(side)
 
+
             elif choice == '3':
-                base   = float(input("Enter base  : "))
-                height = float(input("Enter height: "))
-                shape = Triangle(base, height)
+
+                print("Choose triangle type:")
+
+                print("  1. Right-angled triangle (base + height)")
+
+                print("  2. General triangle (3 sides)")
+
+                sub_choice = input("Enter 1 or 2: ").strip()
+
+                if sub_choice == '1':
+
+                    base = float(input("Enter base: "))
+
+                    height = float(input("Enter height: "))
+
+                    shape = RightTriangle(base, height)
+
+                elif sub_choice == '2':
+
+                    a = float(input("Enter side a: "))
+
+                    b = float(input("Enter side b: "))
+
+                    c = float(input("Enter side c: "))
+
+                    shape = Triangle(a, b, c)
+
+                else:
+
+                    print("Invalid triangle type.")
+
+                    continue
 
             elif choice == '4':
                 radius = float(input("Enter radius: "))
