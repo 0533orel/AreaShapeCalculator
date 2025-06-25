@@ -1,5 +1,5 @@
 from math import sqrt
-from abcShape import Shape
+from .abcShape import Shape
 
 
 class Hexagon(Shape):
@@ -8,3 +8,6 @@ class Hexagon(Shape):
 
     def get_area(self):
         return (3 * sqrt(3) * (self.length ** 2)) / 2
+
+    def get_perimeter(self):
+        return 6 * self.length

@@ -1,4 +1,4 @@
-from rectangle import Rectangle
+from .rectangle import Rectangle
 from math import sqrt
 
 class Triangle(Rectangle):
