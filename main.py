@@ -1,12 +1,12 @@
-from rectangle import Rectangle
-from square import Square
-from triangle import Triangle
-from circle import Circle
-from hexagon import Hexagon
+from shapes.rectangle import Rectangle
+from shapes.square import Square
+from shapes.triangle import Triangle
+from shapes.circle import Circle
+from shapes.hexagon import Hexagon
 
 def menu():
     while True:
-        print("\nChoose a shape to calculate its area:")
+        print("\nChoose a shape to calculate its area and perimeter:")
         print("1. Rectangle")
         print("2. Square")
         print("3. Triangle")
