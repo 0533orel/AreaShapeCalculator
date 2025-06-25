@@ -2,8 +2,10 @@ from math import sqrt
 from .abcShape import Shape
 
 
-class Hexagon(Shape):
+class RegularHexagon(Shape):
     def __init__(self, length):
+        if length <= 0:
+            raise ValueError("Side length must be positive.")
         self.length = length
 
     def get_area(self):

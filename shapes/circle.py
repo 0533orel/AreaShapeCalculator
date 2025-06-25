@@ -3,7 +3,10 @@ from math import pi
 
 class Circle(Shape):
     def __init__(self, radius):
+        if radius <= 0:
+            raise ValueError("Radius must be positive.")
         self.radius = radius
+
 
     def get_area(self):
         return (self.radius**2) * pi
