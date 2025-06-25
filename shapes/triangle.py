@@ -1,4 +1,5 @@
 from rectangle import Rectangle
+from math import sqrt
 
 class Triangle(Rectangle):
     def __init__(self, base, height):
@@ -7,3 +8,6 @@ class Triangle(Rectangle):
     def get_area(self):
         return (self.length * self.width) * 0.5
 
+    def get_perimeter(self):
+        hyp = sqrt(self.length ** 2 + self.width ** 2)
+        return self.length + self.width + hyp
