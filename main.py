@@ -137,14 +137,31 @@ def menu() -> None:
                 print(f"  {s1.__class__.__name__} <  {s2.__class__.__name__}?  {s1 <  s2}")
                 print(f"  {s1.__class__.__name__} >  {s2.__class__.__name__}?  {s1 >  s2}")
 
+
             elif choice == "8":
                 list_shapes(shapes)
                 if len(shapes) < 2:
                     continue
                 s1, s2 = pick_two_indices(shapes)
-                print(f"\nArea math:")
-                print(f"  {s1.__class__.__name__} + {s2.__class__.__name__} = {s1 + s2:.2f}")
-                print(f"  {s1.__class__.__name__} - {s2.__class__.__name__} = {s1 - s2:.2f}")
+                print("\nChoose area operation:")
+                print("  1. Add areas")
+                print("  2. Subtract areas")
+                op_choice = input("Enter 1 or 2: ").strip()
+                try:
+                    if op_choice == "1":
+                        result = s1 + s2
+                        print(f"\n{s1.__class__.__name__} + {s2.__class__.__name__} = {result:.2f}")
+                    elif op_choice == "2":
+                        result = s1 - s2
+                        if result <= 0:
+                            print("Invalid subtraction: result is zero or negative.")
+                        else:
+                            print(f"\n{s1.__class__.__name__} - {s2.__class__.__name__} = {result:.2f}")
+                    else:
+                        print("Invalid option – please choose 1 or 2.")
+                except Exception as e:
+                    print(f"Error performing operation: {e}")
+
 
             elif choice == "9":
                 print("Goodbye!")
