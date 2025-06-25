@@ -1,4 +1,4 @@
-from abcShape import Shape
+from .abcShape import Shape
 
 
 class Rectangle(Shape):
